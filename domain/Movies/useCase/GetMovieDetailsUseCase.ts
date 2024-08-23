@@ -16,16 +16,14 @@ export class GetMovieDetailsUseCase {
 
     public async execute(movieId: number): Promise<Movie> {
         const session = await this.getOrCreateSessionUseCase.execute()
-        console.log(session);
+        const ratedMovies = await this.movieRepository.getRatedMovies(session.guestSessionId)
         
-        // const ratedMovies = await this.movieRepository.getRatedMovies(session.guestSessionId)
-        // console.log('si', ratedMovies);
-        
-        const movieDetails = await this.movieRepository.get(movieId)
+        let movieDetails = await this.movieRepository.get(movieId)
 
-        // const ratedMovieFound = ratedMovies.find(movie => movie.id === movieId)
-        // console.log('rated', ratedMovieFound);
-        
+        const ratedMovie = ratedMovies.find(movie => movie.id === movieId);
+        if (ratedMovie) {
+            movieDetails.rating = ratedMovie.rating;
+        }
         
         return movieDetails
     }

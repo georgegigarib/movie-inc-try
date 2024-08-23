@@ -9,7 +9,7 @@ export class Movie {
 	public readonly overview?: string;
 	public readonly genres?: { id: number, name: string }[];
 	public readonly actors?: Actor[];
-	public readonly rating?: Number;
+	public rating?: number;
 
 	constructor(
 		id: number,

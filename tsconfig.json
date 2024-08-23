@@ -8,7 +8,7 @@
       ],
       "@env": ["./expo-env.d.ts"]
     },
-    "types": ["./expo-env.d.ts"]
+    "types": ["./env.d.ts"]
   },
   "include": [
     "**/*.ts",
@@ -18,6 +18,7 @@
     "jest-setup.js", 
     "__mocks__/@env.ts", 
     "jest.config.js",   
-    "app/(tabs)/index .js"  
+    "app/(tabs)/index .js",  
+    "env.d.ts"
 ]
 }

@@ -26,6 +26,7 @@ export class MoviesApiClient {
 
   public async get(id: number): Promise<MovieDto | null> {
     const URL = `${this.movieBaseURL}/${id}?api_key=${this.apiKey}&language=${this.language}&append_to_response=credits`;
+    
     try {
       const response = await fetch(URL);
 
@@ -74,14 +75,9 @@ export class MoviesApiClient {
   }
 
   public async getRatedMovies(sessionId: string): Promise<MovieDto[]> {
-    let url = `${this.guestBaseURL}/${sessionId}/rated/movies`;
-    const urle = 'https://api.themoviedb.org/3/guest_session/0539d09ba2e917fbaba8ff5785b549d1/rated/movies?language=en-US&page=1&sort_by=created_at.asc';
+    let url = `${this.guestBaseURL}/${sessionId}/rated/movies?api_key=${this.apiKey}`;
      const options = {
       method: 'GET',
-      headers: {
-        accept: 'application/json',
-        Authorization: 'Bearer 1b80934b9ab468e6b68c655377739be5'
-      }
     };
 
     const response = await fetch(url, options);
