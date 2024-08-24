@@ -1,27 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, View, ActivityIndicator } from "react-native";
-import { ThemedView } from "@/components/ThemedView";
-import { ThemedText } from "@/components/ThemedText";
-import { Movie } from "@/domain/Movies/model/Movie";
-import { GetNowPlayingMoviesUseCase } from "@/domain/Movies/useCase/GetNowPlayingMoviesUseCase";
-import Carousel from "@/components/MovieCarousel/MovieCarousel";
-import CustomModal from "@/components/movieModal/MovieModal";
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View, ActivityIndicator, Button } from 'react-native';
+import { useRouter } from 'expo-router';
+import { ThemedView } from '@/components/ThemedView';
+import { ThemedText } from '@/components/ThemedText';
+import { Movie } from '@/domain/Movies/model/Movie';
+import { GetNowPlayingMoviesUseCase } from '@/domain/Movies/useCase/GetNowPlayingMoviesUseCase';
+import Carousel from '@/components/MovieCarousel/MovieCarousel';
+import CustomModal from '@/components/movieModal/MovieModal';
 
-export default function NowPlaying() {
+export default function Trending() {
+  const router = useRouter();
   const getNowPlayingMoviesUseCase = new GetNowPlayingMoviesUseCase();
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
-  const [modalVisible, setModalVisible] = useState<boolean>(false);
 
   const handleMoviePress = (movie: Movie) => {
     setSelectedMovie(movie);
-    setModalVisible(true);
-  };
-
-  const closeModal = () => {
-    setModalVisible(false);
+    if (movie) {
+      router.push({ pathname: '/details', params: { id: movie.id.toString() } });
+    }
   };
 
   useEffect(() => {
@@ -60,11 +59,14 @@ export default function NowPlaying() {
 
       <Carousel onMoviePress={handleMoviePress} />
 
-      <CustomModal
+      {/* Comentado el CustomModal como solicitaste */}
+      {/* <CustomModal
         visible={modalVisible}
-        onClose={closeModal}
+        onClose={() => setModalVisible(false)}
         selectedMovie={selectedMovie}
-      />
+      /> */}
+      
+      {/* Eliminado el botón para ir a detalles */}
     </ThemedView>
   );
 }

@@ -18,7 +18,6 @@
     "jest-setup.js", 
     "__mocks__/@env.ts", 
     "jest.config.js",   
-    "app/(tabs)/index .js",  
     "env.d.ts"
 ]
 }
