@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Alert } from 'react-native';
-import { RateMovieUseCase } from '@/domain/Movies/useCase/RateMovieUseCase';
+import { RateMovieUseCase } from '@/src/domain/Movies/useCase/RateMovieUseCase';
 import { ThemedView } from '@/components/ThemedView';
 import StarRow from '@/components/movie-details/rating-section/rating-stars/stars/Stars';
 import SubmitButton from '@/components/movie-details/rating-section/rating-stars/submit-button/SubmitButton';

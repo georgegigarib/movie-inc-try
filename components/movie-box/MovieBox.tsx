@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import MoviePoster from '@/components/movie-box/poster/Poster';
-import { Movie } from '@/domain/Movies/model/Movie';
+import { Movie } from '@/src/domain/Movies/model/Movie';
 import { ThemedView } from '@/components/ThemedView';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/store';

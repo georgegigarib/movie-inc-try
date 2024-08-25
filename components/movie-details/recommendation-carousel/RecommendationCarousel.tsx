@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, ActivityIndicator, Animated } from 'react-native';
-import { Movie } from '@/domain/Movies/model/Movie';
+import { Movie } from '@/src/domain/Movies/model/Movie';
 import { ThemedText } from '@/components/ThemedText';
-import { MovieRepository } from '@/domain/Movies/repository/MovieRepository';
+import { MovieRepository } from '@/src/domain/Movies/repository/MovieRepository';
 import Box from '@/components/movie-details/recommendation-carousel/box/Box';
 import { ThemedView } from '../../ThemedView';
 

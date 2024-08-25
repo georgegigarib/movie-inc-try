@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Image, ActivityIndicator, Animated, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
-import { Movie } from '@/domain/Movies/model/Movie';
-import { GetMovieDetailsUseCase } from '@/domain/Movies/useCase/GetMovieDetailsUseCase';
+import { Movie } from '@/src/domain/Movies/model/Movie';
+import { GetMovieDetailsUseCase } from '@/src/domain/Movies/useCase/GetMovieDetailsUseCase';
 import ImageWithLoader from '@/components/image-loader-box/ImageLoaderBox';
 import ActorCarousel from '@/components/movie-details/actor-carousel/ActorCarousel';
 import GenresCarousel from '@/components/movie-details/genre-carousel/GenreCarousel';

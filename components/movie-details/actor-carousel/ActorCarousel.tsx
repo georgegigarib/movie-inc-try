@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, ActivityIndicator, Animated } from 'react-native';
-import { Actor } from '@/domain/Actor/model/Actor';
+import { Actor } from '@/src/domain/Actor/model/Actor';
 import Box from './actor-box/Box';
 import { ThemedView } from '../../ThemedView';
 import { ThemedText } from '../../ThemedText';

@@ -7,7 +7,7 @@ import FavoriteButton from '@/components/movie-details/rating-section/favorite/F
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
 import { addMovie, removeMovie } from '@/store/favoriteMovies.ts';
-import { Movie } from '@/domain/Movies/model/Movie';
+import { Movie } from '@/src/domain/Movies/model/Movie';
 
 interface RatingSectionProps {
   movie: Movie;

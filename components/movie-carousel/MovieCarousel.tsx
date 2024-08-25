@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Animated } from "react-native";
-import { Movie } from "@/domain/Movies/model/Movie";
+import { Movie } from "@/src/domain/Movies/model/Movie";
 import MovieBox from "@/components/movie-box/MovieBox";
 import { ThemedView } from "../ThemedView";
 

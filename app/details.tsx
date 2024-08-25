@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, ActivityIndicator } from 'react-native';
 import { Link, useLocalSearchParams } from 'expo-router';
-import { Movie } from '@/domain/Movies/model/Movie';
-import { GetMovieDetailsUseCase } from '@/domain/Movies/useCase/GetMovieDetailsUseCase';
+import { Movie } from '@/src/domain/Movies/model/Movie';
+import { GetMovieDetailsUseCase } from '@/src/domain/Movies/useCase/GetMovieDetailsUseCase';
 import MovieDetails from '@/components/movie-details/MovieDetails';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';

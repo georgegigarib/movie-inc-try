@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { StyleSheet, Animated, PanResponder, Dimensions } from 'react-native';
-import { Movie } from '@/domain/Movies/model/Movie';
+import { Movie } from '@/src/domain/Movies/model/Movie';
 import { ThemedText } from '@/components/ThemedText';
 import Carousel from '@/components/movie-carousel/MovieCarousel';
 import { useRouter } from 'expo-router';

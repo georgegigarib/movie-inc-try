@@ -3,8 +3,8 @@ import { StyleSheet, View, ActivityIndicator, TouchableOpacity } from 'react-nat
 import { useRouter } from 'expo-router';
 import { ThemedView } from '@/components/ThemedView';
 import { ThemedText } from '@/components/ThemedText';
-import { Movie } from '@/domain/Movies/model/Movie';
-import { GetNowPlayingMoviesUseCase } from '@/domain/Movies/useCase/GetNowPlayingMoviesUseCase';
+import { Movie } from '@/src/domain/Movies/model/Movie';
+import { GetNowPlayingMoviesUseCase } from '@/src/domain/Movies/useCase/GetNowPlayingMoviesUseCase';
 import Carousel from '@/components/movie-carousel/MovieCarousel';
 import { RootState } from '@/store/store';
 import { useSelector } from 'react-redux';

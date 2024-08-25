@@ -1,5 +1,5 @@
 // moviesSlice.ts
-import { Movie } from '@/domain/Movies/model/Movie';
+import { Movie } from '@/src/domain/Movies/model/Movie';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface MoviesState {

@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import ImageWithLoader from '@/components/image-loader-box/ImageLoaderBox'
-import { Actor } from '@/domain/Actor/model/Actor';
+import { Actor } from '@/src/domain/Actor/model/Actor';
 
 interface ActorBoxProps {
   actor: Actor;
