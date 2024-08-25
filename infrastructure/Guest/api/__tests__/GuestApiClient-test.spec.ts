@@ -95,7 +95,7 @@ describe("MoviesApiClient", () => {
 
       expect(fetch).toHaveBeenCalled();
       const calledUrl = (fetch as jest.Mock).mock.calls[0][0];
-      expect(calledUrl).toBe('http://test-url.com/guest_session/test-session-id/rated/movies');
+      expect(calledUrl).toBe('http://test-url.com/guest_session/test-session-id/rated/movies?api_key=test-api-key');
       expect(fetch).toHaveBeenCalledTimes(1);
       expect(result).toEqual(getRatedMoviesResponse.results);
     });

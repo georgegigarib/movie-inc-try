@@ -7,40 +7,11 @@ import { ThemedText } from "../ThemedText";
 
 interface CarouselProps {
   onMoviePress: (movie: Movie) => void;
+  movies: Movie[]
 }
 
-export default function Carousel({ onMoviePress }: CarouselProps) {
-  const getNowPlayingMoviesUseCase = new GetNowPlayingMoviesUseCase();
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string>("");
-
-  useEffect(() => {
-    getNowPlayingMoviesUseCase
-      .execute()
-      .then((movies) => {
-        setMovies(movies);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError("Could not load movies.");
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
+export default function Carousel({ onMoviePress, movies }: CarouselProps) {
     return (
-      <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#b6b6b6" />
-      </View>
-    );
-  }
-
-  if (error) {
-    return <ThemedText>{error}</ThemedText>;
-  }
-
-  return (
     <Animated.ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
@@ -62,7 +33,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: 450,
     marginTop: 15,
-    start: 20,
+    start: 15,
   },
   movieBox: {
     width: 250,

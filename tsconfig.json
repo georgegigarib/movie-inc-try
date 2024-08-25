@@ -17,7 +17,9 @@
     "expo-env.d.ts", 
     "jest-setup.js", 
     "__mocks__/@env.ts", 
-    "jest.config.js",   
+    "__mocks__/fileMock.js", 
+    "jest.config.js",
     "env.d.ts"
 ]
+
 }

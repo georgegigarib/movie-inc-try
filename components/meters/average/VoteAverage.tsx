@@ -65,7 +65,7 @@ export default function VoteAverage({ voteAverage }: VoteAverageProps) {
     outputRange: [getColorForVote(0), getColorForVote(voteAverage!)],
   });
 
-  const animatedValues = [animatedValue1, animatedValue2, animatedValue3];
+  const animatedValues = [animatedValue1, animatedValue2,];
   const rotations = animatedValues.map((animatedValue) =>
     animatedValue.interpolate({
       inputRange: [0, 100],
@@ -115,11 +115,11 @@ const styles = StyleSheet.create({
     width: 63,
     height: 63,
     borderRadius: 80,
-    borderWidth: 1,
+    borderWidth: 0,
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
-    backgroundColor: "transparent",
+    backgroundColor: "#D1D1D182",
   },
   progressStatic: {
     position: "absolute",

@@ -17,13 +17,8 @@ export class MovieRepository {
     this.apiClient = new MoviesApiClient()
   }
 
-
   public async getAll(): Promise<Movie[]> {
     const moviesData = await this.apiClient.getAll();
-
-    if (moviesData.length === 0) {
-      throw new CouldNotLoadMoviesException();
-    }
 
     return moviesData.map((movie) => this.movieMapper.model(movie));
   }
@@ -50,10 +45,6 @@ export class MovieRepository {
 
   public async getRatedMovies(sessionId: string): Promise<Movie[]> {
     const moviesData = await this.apiClient.getRatedMovies(sessionId);
-
-    if (moviesData.length === 0) {
-      throw new CouldNotGetRatedMoviesException();
-    }
 
     return moviesData.map((movieDto) => this.movieMapper.model(movieDto));
   }

@@ -43,13 +43,13 @@ describe("MovieRepository", () => {
               id: 101,
               name: "Leonardo DiCaprio",
               character: "Cobb",
-              profilePath: "some-path1",
+              profile_path: "some-path1",
             },
             {
               id: 102,
               name: "Joseph Gordon-Levitt",
               character: "Arthur",
-              profilePath: "some-path2",
+              profile_path: "some-path2",
             },
           ],
         },
@@ -72,13 +72,13 @@ describe("MovieRepository", () => {
               id: 103,
               name: "Keanu Reeves",
               character: "Neo",
-              profilePath: "some-path3",
+              profile_path: "some-path3",
             },
             {
               id: 104,
               name: "Laurence Fishburne",
               character: "Morpheus",
-              profilePath: "some-path4",
+              profile_path: "some-path4",
             },
           ],
         },
@@ -125,14 +125,6 @@ describe("MovieRepository", () => {
   });
 
   describe("getAll", () => {
-    it("should throw CouldNotLoadMoviesException if no movies are returned", async () => {
-      moviesApiClientMock.getAll.mockResolvedValue([]);
-
-      await expect(movieRepository.getAll()).rejects.toThrow(
-        CouldNotLoadMoviesException
-      );
-    });
-
     it("should return movies when API client returns data", async () => {
       moviesApiClientMock.getAll.mockResolvedValue(movieDtos as MovieDto[]);
       movieMapperMock.model.mockImplementation((dto) => movieMocks[dto.id]);
@@ -206,14 +198,6 @@ describe("MovieRepository", () => {
   });
 
   describe("getRatedMovies", () => {
-    it("should throw CouldNotGetRatedMoviesException if no rated movies are returned", async () => {
-      moviesApiClientMock.getRatedMovies.mockResolvedValue([]);
-  
-      await expect(movieRepository.getRatedMovies("session123")).rejects.toThrow(
-        CouldNotGetRatedMoviesException
-      );
-    });
-  
     it("should return rated movies when API client returns data", async () => {
       moviesApiClientMock.getRatedMovies.mockResolvedValue(movieDtos as MovieDto[]);
       movieMapperMock.model.mockImplementation(dto => movieMocks[dto.id]);

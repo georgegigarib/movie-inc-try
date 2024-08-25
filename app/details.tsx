@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, Text, ActivityIndicator } from 'react-native';
-import { useLocalSearchParams } from 'expo-router'; // Cambiado a useLocalSearchParams
+import { StyleSheet, View, ActivityIndicator, Button, Text } from 'react-native';
+import { Link, useLocalSearchParams } from 'expo-router';
 import { Movie } from '@/domain/Movies/model/Movie';
 import { GetMovieDetailsUseCase } from '@/domain/Movies/useCase/GetMovieDetailsUseCase';
 import MovieDetails from '@/components/movieDetails/MovieDetails';
+import { ThemedText } from '@/components/ThemedText';
+import { ThemedView } from '@/components/ThemedView';
 
-export default function DetailsScreen() {
+export default function DetailsPage() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const [movie, setMovie] = useState<Movie | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -13,8 +15,11 @@ export default function DetailsScreen() {
   const getMovieDetailsUseCase = new GetMovieDetailsUseCase();
 
   useEffect(() => {
-    if (id) {
-      getMovieDetailsUseCase.execute(Number(id))
+    const movieId = Number(id);
+
+    if (!isNaN(movieId)) {
+      getMovieDetailsUseCase
+        .execute(Number(id))
         .then((movieDetails) => {
           setMovie(movieDetails);
           setLoading(false);
@@ -23,6 +28,9 @@ export default function DetailsScreen() {
           setError('Could not load movie details.');
           setLoading(false);
         });
+    } else {
+      setError('Invalid movie ID.');
+      setLoading(false);
     }
   }, [id]);
 
@@ -37,7 +45,11 @@ export default function DetailsScreen() {
   if (error) {
     return (
       <View style={styles.container}>
-        <Text>{error}</Text>
+        <Text testID="error-message">{error}</Text>
+
+        <Link href="/" style={styles.link} testID="back-link">
+          <Text>Go back to Trending</Text>
+        </Link>
       </View>
     );
   }
@@ -45,15 +57,21 @@ export default function DetailsScreen() {
   if (!movie) {
     return (
       <View style={styles.container}>
-        <Text>No movie data available.</Text>
+        <ThemedText type="subtitle" testID="no-movie-message">
+          No movie data available.
+        </ThemedText>
+
+        <Link href="/" style={styles.link} testID="back-link">
+          <ThemedText type="link">Go back to Trending</ThemedText>
+        </Link>
       </View>
     );
   }
 
   return (
-    <View style={styles.container}>
-       <MovieDetails movie={movie} />
-    </View>
+    <ThemedView style={styles.container}>
+      <MovieDetails movie={movie} />
+    </ThemedView>
   );
 }
 
@@ -62,11 +80,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 5,
-    paddingHorizontal: 5
+    paddingTop: 10,
+    paddingHorizontal: 5,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
+  },
+  link: {
+    marginTop: 15,
+    paddingVertical: 15,
+  },
+  image: {
+    width: 100,
+    height: 100,
   },
 });

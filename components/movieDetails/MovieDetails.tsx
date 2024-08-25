@@ -10,6 +10,10 @@ import GenresCarousel from '../genreCarousel/GenreCarousel';
 import RatingStars from '../ratingStars/RatingStarts';
 import RecommendationCarousel from '../RecommendationCarousel/RecommendationCarousel';
 import { RateMovieUseCase } from '@/domain/Movies/useCase/RateMovieUseCase';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/store/store';
+import { addMovie, removeMovie } from '@/store/favoriteMovies.ts';
 
 interface MovieDetailsProps {
   movie: Movie | null;
@@ -22,6 +26,21 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
   const [movieDetails, setMovieDetails] = useState<Movie>(movie);
   const getMovieDetailsUseCase = new GetMovieDetailsUseCase();
   const rateMovieUseCase = new RateMovieUseCase();
+  const dispatch = useDispatch();
+  const favMovies = useSelector((state: RootState) => state.movies.movies);
+
+  const isFavorite = movie ? favMovies.some((favMovie) => favMovie.id === movieDetails.id) : false;
+
+  const handleToggleFavorite = () => {
+    if (movieDetails) {
+      const moviePlain = JSON.parse(JSON.stringify(movieDetails));
+      if (isFavorite) {
+        dispatch(removeMovie(moviePlain.id));
+      } else {
+        dispatch(addMovie(moviePlain));
+      }
+    }
+  };
 
   const fetchMovieDetails = (movieId: number) => {
     setLoading(true);
@@ -58,11 +77,6 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
     return yearMatch ? yearMatch[0] : 'Unknown';
   }
 
-  const handleRatingSubmit = (rating: number) => {
-    rateMovieUseCase.execute(movieDetails.id, rating);
-    console.log('Rating submitted:', rating);
-  };
-
   const handleMoviePress = (selectedMovie: Movie) => {
     fetchMovieDetails(selectedMovie.id); // Fetch details of the selected movie
   };
@@ -83,16 +97,16 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
                 <ThemedText type="title">{movieDetails.title}</ThemedText>
                 <ThemedText type="caption">({getYearFromDate(movieDetails.releaseDate)})</ThemedText>
               </View>
-              
+
               <Animated.ScrollView
                 showsVerticalScrollIndicator={true}
                 scrollEventThrottle={16}
                 contentContainerStyle={styles.scrollOverview}
               >
                 <TouchableOpacity activeOpacity={1}>
-                    <ThemedText type="caption" style={{ fontWeight: '500', marginTop: 15 }}>
-                      {movieDetails.overview}
-                    </ThemedText>
+                  <ThemedText type="caption" style={{ fontWeight: '500', marginTop: 15 }}>
+                    {movieDetails.overview}
+                  </ThemedText>
                 </TouchableOpacity>
               </Animated.ScrollView>
             </View>
@@ -103,9 +117,13 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
           </View>
 
           <View style={styles.rateContainer}>
-            <View style={styles.rateCircle}>
+            <View>
               <VoteAverage voteAverage={movieDetails.voteAverage} />
             </View>
+
+            <TouchableOpacity style={styles.favoriteButton} onPress={handleToggleFavorite}>
+              <Icon name={isFavorite ? 'heart' : 'heart-o'} size={30} color="#ff0000" />
+            </TouchableOpacity>
 
             <RatingStars actualRate={movieDetails.rating} movieId={movieDetails.id} />
           </View>
@@ -118,7 +136,9 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
           </View>
 
           <View>
-            <ThemedText type="subtitle" style={{ marginVertical: 10 }}>Recommendations</ThemedText>
+            <ThemedText type="subtitle" style={{ marginVertical: 10 }}>
+              Recommendations
+            </ThemedText>
             <RecommendationCarousel onMoviePress={handleMoviePress} selectedMovie={movieDetails!} />
           </View>
         </TouchableOpacity>
@@ -133,17 +153,20 @@ const styles = StyleSheet.create({
   },
   scrollOverview: {
     flexGrow: 1,
-    marginTop: 10
+    marginTop: 10,
   },
   firstContainer: {
     flexDirection: 'row',
-    height: 250
+    height: 250,
+  },
+  favoriteButton: {
+    paddingVertical: 20,
   },
   descriptionContainer: {
     flex: 1,
     left: 10,
     paddingRight: 20,
-    height: 250
+    height: 250,
   },
   container: {
     flex: 1,
@@ -164,7 +187,9 @@ const styles = StyleSheet.create({
   rateContainer: {
     flexDirection: 'row',
     marginTop: 20,
-    justifyContent: 'space-evenly',
+    justifyContent: 'flex-start',
+    paddingHorizontal: 20,
+    gap: 25
   },
   title: {
     fontSize: 20,
@@ -177,7 +202,6 @@ const styles = StyleSheet.create({
     marginTop: -6,
     fontWeight: '400',
   },
-  rateCircle: {},
   loadingIndicator: {
     flex: 1,
     justifyContent: 'center',

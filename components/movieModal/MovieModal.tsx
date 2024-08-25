@@ -4,19 +4,27 @@ import MovieDetails from '../movieDetails/MovieDetails';
 import { Movie } from '@/domain/Movies/model/Movie';
 import { ThemedText } from '../ThemedText';
 import RecommendationCarousel from '../RecommendationCarousel/RecommendationCarousel';
+import Carousel from '../MovieCarousel/MovieCarousel';
+import { useRouter } from 'expo-router';
 
 const { height } = Dimensions.get('window');
 
 interface CustomModalProps {
   visible: boolean;
   onClose: () => void;
-  selectedMovie: Movie | null;
+  movies: Movie[] | null
 }
 
-const CustomModal: React.FC<CustomModalProps> = ({ visible, onClose, selectedMovie }) => {
+const CustomModal: React.FC<CustomModalProps> = ({ visible, onClose, movies }) => {
   const slideAnim = useRef(new Animated.Value(height)).current; // Start off-screen
 
-  const [movie, setMovie] = useState<Movie>(selectedMovie!);
+  const router = useRouter();
+
+  const handleMoviePress = (movie: Movie) => {
+    if (movie) {
+      router.replace({ pathname: '/details', params: { id: movie.id.toString() } });
+    }
+  };
 
   const panResponder = useRef(
     PanResponder.create({
@@ -62,6 +70,7 @@ const CustomModal: React.FC<CustomModalProps> = ({ visible, onClose, selectedMov
   }, [visible]);
 
   if (!visible) return null;
+
   return (
     <View style={styles.modalBackground}>
       <Animated.View
@@ -69,7 +78,17 @@ const CustomModal: React.FC<CustomModalProps> = ({ visible, onClose, selectedMov
         {...panResponder.panHandlers}
       >
         <View style={styles.dragBar} />
-        <MovieDetails movie={selectedMovie} />
+
+        {movies && movies.length > 0 ? (
+          <View>
+            <ThemedText type='title' style={{alignSelf: 'flex-start'}}>Favorite movies</ThemedText>
+          <Carousel movies={movies} onMoviePress={handleMoviePress}></Carousel>
+          </View>
+        ) : (
+          <View style={{marginTop: 20}}>
+            <ThemedText type='title'>No favorite movies yet</ThemedText>
+          </View>
+        )}
       </Animated.View>
     </View>
   );
