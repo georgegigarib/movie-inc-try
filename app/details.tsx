@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, ActivityIndicator, Button, Text } from 'react-native';
+import { StyleSheet, View, ActivityIndicator } from 'react-native';
 import { Link, useLocalSearchParams } from 'expo-router';
 import { Movie } from '@/domain/Movies/model/Movie';
 import { GetMovieDetailsUseCase } from '@/domain/Movies/useCase/GetMovieDetailsUseCase';
-import MovieDetails from '@/components/movieDetails/MovieDetails';
+import MovieDetails from '@/components/movie-details/MovieDetails';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
@@ -44,27 +44,27 @@ export default function DetailsPage() {
 
   if (error) {
     return (
-      <View style={styles.container}>
-        <Text testID="error-message">{error}</Text>
+      <ThemedView style={styles.container}>
+        <ThemedText>{error}</ThemedText>
 
-        <Link href="/" style={styles.link} testID="back-link">
-          <Text>Go back to Trending</Text>
+        <Link href="/" style={styles.link}>
+          <ThemedText>Go back to Trending</ThemedText>
         </Link>
-      </View>
+      </ThemedView>
     );
   }
 
   if (!movie) {
     return (
-      <View style={styles.container}>
-        <ThemedText type="subtitle" testID="no-movie-message">
+      <ThemedView style={styles.container}>
+        <ThemedText type="subtitle">
           No movie data available.
         </ThemedText>
 
-        <Link href="/" style={styles.link} testID="back-link">
+        <Link href="/" style={styles.link}>
           <ThemedText type="link">Go back to Trending</ThemedText>
         </Link>
-      </View>
+      </ThemedView>
     );
   }
 

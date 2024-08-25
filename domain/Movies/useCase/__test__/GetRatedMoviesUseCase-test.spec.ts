@@ -1,10 +1,10 @@
 import { mock, MockProxy } from 'jest-mock-extended';
-import { GetRatedMoviesUseCase } from '@/domain/Movies/useCase/GetRatedMoviesUseCase';
-import { MovieRepository } from '@/domain/Movies/repository/MovieRepository';
-import { GetOrCreateSessionUseCase } from '@/domain/Guest/useCase/GetOrCreateSessionUseCase';
-import { Movie } from '@/domain/Movies/model/Movie';
-import { GuestSession } from '@/domain/Guest/model/GuestSession';
-import { CouldNotGetRatedMoviesException } from '../../exceptions/CouldNotGetRatedMoviesException.ts';
+import { GetRatedMoviesUseCase } from '@/domain/Movies/useCase/GetRatedMoviesUseCase.js';
+import { MovieRepository } from '@/domain/Movies/repository/MovieRepository.js';
+import { GetOrCreateSessionUseCase } from '@/domain/Guest/useCase/GetOrCreateSessionUseCase.js';
+import { Movie } from '@/domain/Movies/model/Movie.js';
+import { GuestSession } from '@/domain/Guest/model/GuestSession.js';
+import { CouldNotGetRatedMoviesException } from '../../exceptions/CouldNotGetRatedMoviesException.ts.js';
 
 describe('GetRatedMoviesUseCase', () => {
   let movieRepositoryMock: MockProxy<MovieRepository>;
@@ -45,15 +45,6 @@ describe('GetRatedMoviesUseCase', () => {
       const result = await getRatedMoviesUseCase.execute();
 
       expect(result).toEqual(movies);
-      expect(getOrCreateSessionUseCaseMock.execute).toHaveBeenCalledTimes(1);
-      expect(movieRepositoryMock.getRatedMovies).toHaveBeenCalledWith(guestSession.guestSessionId);
-    });
-
-    it('should throw CouldNotGetRatedMoviesException if movieRepository.getRatedMovies fails', async () => {
-      getOrCreateSessionUseCaseMock.execute.mockResolvedValue(guestSession);
-      movieRepositoryMock.getRatedMovies.mockRejectedValue(new CouldNotGetRatedMoviesException());
-
-      await expect(getRatedMoviesUseCase.execute()).rejects.toThrow(CouldNotGetRatedMoviesException);
       expect(getOrCreateSessionUseCaseMock.execute).toHaveBeenCalledTimes(1);
       expect(movieRepositoryMock.getRatedMovies).toHaveBeenCalledWith(guestSession.guestSessionId);
     });

@@ -2,7 +2,7 @@ import { getColorForVote } from '@/utils/colotMeter';
 
 describe('getColorForVote', () => {
   test.each([
-    [0, '#CC0000'],
+    [0, '#CC000000'],
     [1, '#CC0000'],
     [1.5, '#CC3700'],
     [2, '#CC3700'],
