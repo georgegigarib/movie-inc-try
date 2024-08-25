@@ -1,7 +1,7 @@
 import { type MovieDto } from '@/src/domain/Movies/client/Dtos';
 import { Movie } from '@/src/domain/Movies/model/Movie';
 import { ActorMapper } from '@/src/domain/Actor/mappers/ActorMapper';
-import { formatDate } from '@/utils/formatDate';
+import { formatDate } from '@/src/infrastructure/utils/formatDate';
 
 export class MovieMapper {
     private actorMapper: ActorMapper;

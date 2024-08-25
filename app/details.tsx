@@ -3,9 +3,9 @@ import { StyleSheet, View, ActivityIndicator } from 'react-native';
 import { Link, useLocalSearchParams } from 'expo-router';
 import { Movie } from '@/src/domain/Movies/model/Movie';
 import { GetMovieDetailsUseCase } from '@/src/domain/Movies/useCase/GetMovieDetailsUseCase';
-import MovieDetails from '@/components/movie-details/MovieDetails';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import MovieDetails from '@/src/infrastructure/components/movie-details/MovieDetails';
+import { ThemedText } from '@/src/infrastructure/components/ThemedText';
+import { ThemedView } from '@/src/infrastructure/components/ThemedView';
 
 export default function DetailsPage() {
   const { id } = useLocalSearchParams<{ id: string }>();

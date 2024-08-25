@@ -1,10 +1,10 @@
 import { GetOrCreateSessionUseCase } from '@/src/domain/Guest/useCase/GetOrCreateSessionUseCase';
 import { GuestRepository } from '@/src/domain/Guest/repository/GuestRepository';
 import { GuestSession } from '@/src/domain/Guest/model/GuestSession';
-import { getSession, setSession, isActive } from '@/utils/sessionStorage';
+import { getSession, setSession, isActive } from '@/src/infrastructure/utils/sessionStorage';
 
 jest.mock('@/src/domain/Guest/repository/GuestRepository');
-jest.mock('@/utils/sessionStorage');
+jest.mock('@/src/infrastructure/utils/sessionStorage');
 
 describe('GetOrCreateSessionUseCase', () => {
   const mockSession = new GuestSession('12345', '2024-08-22T06:31:09Z');

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
-import { ThemedView } from '@/components/ThemedView';
-import { ThemedText } from '@/components/ThemedText';
+import { ThemedView } from '@/src/infrastructure/components/ThemedView';
+import { ThemedText } from '@/src/infrastructure/components/ThemedText';
 import { Movie } from '@/src/domain/Movies/model/Movie';
 import { GetNowPlayingMoviesUseCase } from '@/src/domain/Movies/useCase/GetNowPlayingMoviesUseCase';
-import Carousel from '@/components/movie-carousel/MovieCarousel';
-import { RootState } from '@/store/store';
+import Carousel from '@/src/infrastructure/components/movie-carousel/MovieCarousel';
+import { RootState } from '@/src/infrastructure/store/store';
 import { useSelector } from 'react-redux';
-import FavoritesModal from '@/components/favorites-modal/FavoritesModal';
+import FavoritesModal from '@/src/infrastructure/components/favorites-modal/FavoritesModal';
 
 export default function TrendingPage() {
   const router = useRouter();
