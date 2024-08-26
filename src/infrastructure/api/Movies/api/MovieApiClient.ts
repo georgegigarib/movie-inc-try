@@ -1,23 +1,16 @@
 import { MovieDto } from "@/src/domain/Movies/client/Dtos";
-import {
-  API_CLIENT_BASE_URL,
-  API_KEY,
-  API_LANGUAGE
-} from '@env';
 import regeneratorRuntime from "regenerator-runtime"
 
-const MOVIES_API_BASE_URL = `${API_CLIENT_BASE_URL}/movie`;
-const GUEST_API_BASE_URL = `${API_CLIENT_BASE_URL}/guest_session`;
-
 export class MoviesApiClient {
-  private readonly movieBaseURL: string = MOVIES_API_BASE_URL;
-  private readonly guestBaseURL: string = GUEST_API_BASE_URL;
-  private readonly apiKey: string = API_KEY;
-  private readonly language: string = API_LANGUAGE;
+  private readonly movieBaseURL: string = `${process.env.EXPO_PUBLIC_API_CLIENT_BASE_URL}/movie`;
+  private readonly guestBaseURL: string = `${process.env.EXPO_PUBLIC_API_CLIENT_BASE_URL}/guest_session`;
+  private readonly apiKey: string = process.env.EXPO_PUBLIC_API_KEY as string;
+  private readonly language: string = process.env.EXPO_PUBLIC_API_LANGUAGE as string;
 
   constructor() {}
 
   public async getAll(): Promise<MovieDto[]> {
+
     const URL = `${this.movieBaseURL}/now_playing?api_key=${this.apiKey}&language=${this.language}&page=1`;
     const response = await fetch(URL);
     const res = await response.json();

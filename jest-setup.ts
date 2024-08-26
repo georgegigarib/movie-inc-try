@@ -5,8 +5,3 @@ jest.mock('@react-native-async-storage/async-storage', () =>
 );
 
 jest.mock('react-native-reanimated', () => require('react-native-reanimated/mock'));
-
-
-// jest.mock('@/hooks/useThemeColor', () => ({
-//   useThemeColor: jest.fn(() => 'black'),
-// }));

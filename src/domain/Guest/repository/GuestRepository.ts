@@ -1,4 +1,4 @@
-import { GuestApiClient } from "@/src/infrastructure/Guest/api/GuestApiClient";
+import { GuestApiClient } from "@/src/infrastructure/api/Guest/api/GuestApiClient";
 import { GuestSession } from "@/src/domain/Guest/model/GuestSession";
 import { CouldNotCreateGuestSessionException } from "@/src/domain/Guest/exceptions/CouldNotCreateGuestSessionException";
 

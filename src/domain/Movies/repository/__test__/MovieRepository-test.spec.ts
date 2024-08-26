@@ -1,4 +1,4 @@
-import { MoviesApiClient } from "@/src/infrastructure/Movies/api/MovieApiClient";
+import { MoviesApiClient } from "@/src/infrastructure/api/Movies/api/MovieApiClient";
 import { mock, MockProxy } from "jest-mock-extended";
 import { MovieDto } from "@/src/domain/Movies/client/Dtos";
 import { Movie } from "@/src/domain/Movies/model/Movie";

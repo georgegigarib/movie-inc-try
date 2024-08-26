@@ -1,4 +1,4 @@
-import { GuestApiClient } from "@/src/infrastructure/Guest/api/GuestApiClient";
+import { GuestApiClient } from "@/src/infrastructure/api/Guest/api/GuestApiClient";
 import { mock, MockProxy } from "jest-mock-extended";
 import { GuestSessionDto } from "@/src/domain/Guest/clients/Dtos";
 import { GuestSession } from "@/src/domain/Guest/model/GuestSession";

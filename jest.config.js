@@ -2,7 +2,6 @@ module.exports = {
   preset: 'jest-expo',
   setupFilesAfterEnv: ['./jest-setup.ts'],
   moduleNameMapper: {
-    '^@env$': './__mocks__/@env.ts',
     '\\.(gif|ttf|eot|svg)$': '<rootDir>/__mocks__/fileMock.js',
   },
   transform: {

@@ -1,17 +1,14 @@
 import { GuestSessionDto } from '@/src/domain/Guest/clients/Dtos';
-import {
-  API_CLIENT_BASE_URL,
-  API_KEY,
-} from '@env';
 import regeneratorRuntime from "regenerator-runtime"
 
-const AUTH_API_BASE_URL = `${API_CLIENT_BASE_URL}/authentication`;
-
 export class GuestApiClient {
+  private readonly authBaseUrl: string = `${process.env.EXPO_PUBLIC_API_CLIENT_BASE_URL}/authentication`;
+  private readonly apiKey: string = process.env.EXPO_PUBLIC_API_KEY as string;
+
   constructor() {}
 
   public async createSession(): Promise<GuestSessionDto> {
-    const URL = `${AUTH_API_BASE_URL}/guest_session/new?api_key=${API_KEY}`;
+    const URL = `${this.authBaseUrl}/guest_session/new?api_key=${this.apiKey}`;
     const response = await fetch(URL);
     const result = await response.json();
 

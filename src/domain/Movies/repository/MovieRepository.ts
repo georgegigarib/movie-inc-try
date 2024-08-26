@@ -6,7 +6,7 @@ import { CouldNotLoadMoviesException } from "@/src/domain/Movies/exceptions/Coul
 import { CouldNotRateMovieException } from "@/src/domain/Movies/exceptions/CouldNotRateMovieException";
 import { MovieMapper } from "@/src/domain/Movies/mappers/MovieMapper";
 import { Movie } from "@/src/domain/Movies/model/Movie";
-import { MoviesApiClient } from "@/src/infrastructure/Movies/api/MovieApiClient";
+import { MoviesApiClient } from "@/src/infrastructure/api/Movies/api/MovieApiClient";
 
 export class MovieRepository {
   private movieMapper: MovieMapper;
