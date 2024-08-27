@@ -1,6 +1,6 @@
 import { GuestApiClient } from "@/src/infrastructure/api/Guest/api/GuestApiClient";
 import { mock, MockProxy } from "jest-mock-extended";
-import { GuestSessionDto } from "@/src/domain/Guest/clients/Dtos";
+import { GuestSessionDto } from "@/src/domain/Guest/dtos/Dtos";
 import { GuestSession } from "@/src/domain/Guest/model/GuestSession";
 import { CouldNotCreateGuestSessionException } from "@/src/domain/Guest/exceptions/CouldNotCreateGuestSessionException";
 import { GuestRepository } from "@/src/domain/Guest/repository/GuestRepository";

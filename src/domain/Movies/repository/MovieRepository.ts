@@ -1,8 +1,6 @@
-import { MovieDto } from "@/src/domain/Movies/client/Dtos";
+import { MovieDto } from "@/src/domain/Movies/dtos/Dtos";
 import { CouldNotGetMovieException } from "@/src/domain/Movies/exceptions/CouldNotGetMovieException";
-import { CouldNotGetRatedMoviesException } from "@/src/domain/Movies/exceptions/CouldNotGetRatedMoviesException.ts";
 import { CouldNotGetRecommendationsException } from "@/src/domain/Movies/exceptions/CouldNotGetRecommendationsException";
-import { CouldNotLoadMoviesException } from "@/src/domain/Movies/exceptions/CouldNotLoadMoviesException";
 import { CouldNotRateMovieException } from "@/src/domain/Movies/exceptions/CouldNotRateMovieException";
 import { MovieMapper } from "@/src/domain/Movies/mappers/MovieMapper";
 import { Movie } from "@/src/domain/Movies/model/Movie";

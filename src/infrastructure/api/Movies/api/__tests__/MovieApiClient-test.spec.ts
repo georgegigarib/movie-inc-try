@@ -1,5 +1,5 @@
 import { MoviesApiClient } from "@/src/infrastructure/api/Movies/api/MovieApiClient";
-import { MovieDto } from "@/src/domain/Movies/client/Dtos";
+import { MovieDto } from "@/src/domain/Movies/dtos/Dtos";
 
 describe("MoviesApiClient", () => {
   let moviesApiClient: MoviesApiClient;

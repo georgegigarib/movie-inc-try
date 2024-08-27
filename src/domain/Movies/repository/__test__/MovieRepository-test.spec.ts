@@ -1,14 +1,12 @@
 import { MoviesApiClient } from "@/src/infrastructure/api/Movies/api/MovieApiClient";
 import { mock, MockProxy } from "jest-mock-extended";
-import { MovieDto } from "@/src/domain/Movies/client/Dtos";
+import { MovieDto } from "@/src/domain/Movies/dtos/Dtos";
 import { Movie } from "@/src/domain/Movies/model/Movie";
 import { MovieRepository } from "@/src/domain/Movies/repository/MovieRepository";
 import { Actor } from "@/src/domain/Actor/model/Actor";
-import { CouldNotLoadMoviesException } from "@/src/domain/Movies/exceptions/CouldNotLoadMoviesException";
 import { MovieMapper } from "@/src/domain/Movies/mappers/MovieMapper";
 import { CouldNotGetMovieException } from "@/src/domain/Movies/exceptions/CouldNotGetMovieException";
 import { CouldNotGetRecommendationsException } from "@/src/domain/Movies/exceptions/CouldNotGetRecommendationsException";
-import { CouldNotGetRatedMoviesException } from "@/src/domain/Movies/exceptions/CouldNotGetRatedMoviesException.ts";
 import { CouldNotRateMovieException } from "@/src/domain/Movies/exceptions/CouldNotRateMovieException";
 
 describe("MovieRepository", () => {

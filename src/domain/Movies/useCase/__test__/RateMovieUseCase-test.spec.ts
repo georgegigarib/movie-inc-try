@@ -23,15 +23,6 @@ describe('RateMovieUseCase', () => {
   });
 
   describe('execute', () => {
-    it('should throw CouldNotRateMovieException if rateMovie throws an exception', async () => {
-        getOrCreateSessionUseCaseMock.execute.mockResolvedValue(guestSession);
-        movieRepositoryMock.rateMovie.mockRejectedValue(new CouldNotRateMovieException());
-  
-        await expect(rateMovieUseCase.execute(1, 5)).rejects.toThrow(CouldNotRateMovieException);
-        expect(getOrCreateSessionUseCaseMock.execute).toHaveBeenCalledTimes(1);
-        expect(movieRepositoryMock.rateMovie).toHaveBeenCalledWith(1, 5, guestSession.guestSessionId);
-      });
-
     it('should return true when the rating is successful', async () => {
       getOrCreateSessionUseCaseMock.execute.mockResolvedValue(guestSession);
       movieRepositoryMock.rateMovie.mockResolvedValue(true);

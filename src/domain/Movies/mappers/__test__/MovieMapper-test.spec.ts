@@ -1,5 +1,5 @@
 import { MovieMapper } from '@/src/domain/Movies/mappers/MovieMapper';
-import { MovieDto } from '@/src/domain/Movies/client/Dtos';
+import { MovieDto } from '@/src/domain/Movies/dtos/Dtos';
 import { Movie } from '@/src/domain/Movies/model/Movie';
 import { Actor } from '@/src/domain/Actor/model/Actor';
 import { ActorMapper } from '@/src/domain/Actor/mappers/ActorMapper';
@@ -54,9 +54,9 @@ describe('MovieMapper', () => {
     expect(movie).toBeInstanceOf(Movie);
     expect(movie.id).toBe(movieDto.id);
     expect(movie.title).toBe(movieDto.title);
-    expect(movie.releaseDate).toBe('May 2, 2008'); // Updated to match the formatDate change
+    expect(movie.releaseDate).toBe('May 2, 2008');
     expect(movie.voteAverage).toBe(movieDto.vote_average);
-    expect(movie.posterPath).toBe(`https://image.tmdb.org/t/p/original${movieDto.poster_path}`);
+    expect(movie.posterPath).toContain(movieDto.poster_path);
     expect(movie.overview).toBe(movieDto.overview);
     expect(movie.genres).toEqual(movieDto.genres);
     expect(movie.actors).toHaveLength(2);

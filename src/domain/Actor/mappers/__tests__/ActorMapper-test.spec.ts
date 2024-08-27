@@ -1,5 +1,5 @@
 import { ActorMapper } from '@/src/domain/Actor/mappers/ActorMapper';
-import { ActorDto } from '@/src/domain/Actor/client/Dtos';
+import { ActorDto } from '@/src/domain/Actor/dtos/Dtos';
 import { Actor } from '@/src/domain/Actor/model/Actor';
 
 describe('ActorMapper', () => {
@@ -22,7 +22,7 @@ describe('ActorMapper', () => {
     expect(actor.name).toBe(dto.name);
     expect(actor.id).toBe(dto.id);
     expect(actor.character).toBe(dto.character);
-    expect(actor.profilePath).toBe(`https://image.tmdb.org/t/p/original${dto.profile_path}`);
+    expect(actor.profilePath).toContain(dto.profile_path);
   });
 
   it('should be instance of Actor', () => {

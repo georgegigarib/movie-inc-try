@@ -73,15 +73,11 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
             />
           </View>
 
-          {movieDetails.genres && (
-            <GenresCarousel genres={movieDetails.genres} />
-          )}
-          
+          {movieDetails.genres && <GenresCarousel genres={movieDetails.genres} />}
+
           <RatingSection movie={movieDetails} />
 
-          {movieDetails.actors && (
-            <ActorCarousel actors={movieDetails.actors} />
-          )}
+          {movieDetails.actors && <ActorCarousel actors={movieDetails.actors} />}
 
           <RecommendationCarousel onMoviePress={handleMoviePress} selectedMovie={movieDetails} />
         </TouchableOpacity>

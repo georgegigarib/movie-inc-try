@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box renders correctly and shows actor details 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "opacity": 1,
+    }
+  }
+  testID="actor-box-button"
+>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "#fff",
+        },
+        {
+          "alignItems": "center",
+          "height": 200,
+          "marginHorizontal": 10,
+          "width": 100,
+        },
+      ]
+    }
+    testID="actor-box"
+  >
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "#fff",
+          },
+          {
+            "backgroundColor": "transparent",
+            "borderColor": "#ddd",
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "elevation": 15,
+            "height": 150,
+            "overflow": "hidden",
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 0,
+              "width": 0,
+            },
+            "shadowOpacity": 0.8,
+            "width": 100,
+          },
+        ]
+      }
+      testID="actor-image"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": "#fff",
+            },
+            {
+              "alignItems": "center",
+              "backgroundColor": "rgba(255, 255, 255, 0.8)",
+              "bottom": 0,
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+          ]
+        }
+        testID="loading-container"
+      >
+        <ActivityIndicator
+          color="#b6b6b6"
+          size="large"
+        />
+      </View>
+      <View
+        collapsable={false}
+        style={
+          {
+            "opacity": 0,
+          }
+        }
+      >
+        <Image
+          onError={[Function]}
+          onLoad={[Function]}
+          onLoadStart={[Function]}
+          source={
+            {
+              "uri": "https://example.com/profile.jpg",
+            }
+          }
+          style={
+            {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+          testID="actor-image-image"
+        />
+      </View>
+    </View>
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "#fff",
+          },
+          {
+            "alignItems": "center",
+          },
+        ]
+      }
+      testID="actor-names"
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#11181C",
+            },
+            {
+              "fontSize": 16,
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            {
+              "fontSize": 12,
+              "fontWeight": "600",
+              "textAlign": "center",
+            },
+          ]
+        }
+        testID="actor-name"
+      >
+        John Doe
+      </Text>
+      <Text
+        style={
+          [
+            {
+              "color": "#11181C",
+            },
+            {
+              "fontSize": 16,
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            {
+              "fontSize": 10,
+              "fontWeight": "400",
+              "textAlign": "center",
+            },
+          ]
+        }
+        testID="actor-character"
+      >
+        Main Character
+      </Text>
+    </View>
+  </View>
+</View>
+`;

@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/src/infrastructure/components/ThemedText';
 import { ThemedView } from '@/src/infrastructure/components/ThemedView';
-import ImageWithLoader from '@/src/infrastructure/components/image-loader-box/ImageLoaderBox'
+import ImageWithLoader from '@/src/infrastructure/components/image-loader-box/ImageLoaderBox';
 import { Actor } from '@/src/domain/Actor/model/Actor';
 
 interface ActorBoxProps {
@@ -11,15 +11,16 @@ interface ActorBoxProps {
 
 export default function Box({ actor }: ActorBoxProps) {
   return (
-    <TouchableOpacity activeOpacity={0.7}>
-      <ThemedView style={styles.box}>
-          <ImageWithLoader
-            source={{ uri: actor.profilePath }}
-            style={styles.posterContainer}
-          />
-        <ThemedView style={styles.names}>
-          <ThemedText style={styles.title}>{actor.name}</ThemedText>
-          <ThemedText style={styles.caption}>{actor.character}</ThemedText>
+    <TouchableOpacity activeOpacity={0.7} testID="actor-box-button">
+      <ThemedView style={styles.box} testID="actor-box">
+        <ImageWithLoader
+          source={{ uri: actor.profilePath }}
+          style={styles.posterContainer}
+          testID="actor-image"
+        />
+        <ThemedView style={styles.names} testID="actor-names">
+          <ThemedText style={styles.title} testID="actor-name">{actor.name}</ThemedText>
+          <ThemedText style={styles.caption} testID="actor-character">{actor.character}</ThemedText>
         </ThemedView>
       </ThemedView>
     </TouchableOpacity>

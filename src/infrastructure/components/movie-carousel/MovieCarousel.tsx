@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Animated } from "react-native";
 import { Movie } from "@/src/domain/Movies/model/Movie";
 import MovieBox from "@/src/infrastructure/components/movie-box/MovieBox";
-import { ThemedView } from "../ThemedView";
+import { ThemedView } from "@/src/infrastructure/components/ThemedView";
 
 interface CarouselProps {
   onMoviePress: (movie: Movie) => void;
@@ -10,15 +10,16 @@ interface CarouselProps {
 }
 
 export default function Carousel({ onMoviePress, movies }: CarouselProps) {
-    return (
+  return (
     <Animated.ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
       scrollEventThrottle={16}
       contentContainerStyle={styles.moviesContainer}
+      testID="carousel-scroll-view"
     >
       {movies.map((movie) => (
-        <ThemedView key={movie.id} style={styles.movieBox}>
+        <ThemedView key={movie.id} style={styles.movieBox} testID={`movie-box-${movie.id}`}>
           <MovieBox movie={movie} onPress={() => onMoviePress(movie)} />
         </ThemedView>
       ))}
@@ -37,10 +38,5 @@ const styles = StyleSheet.create({
   movieBox: {
     width: 250,
     marginHorizontal: 10,
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
 });

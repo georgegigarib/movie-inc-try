@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Animated, TouchableOpacity } from 'react-native';
+import { StyleSheet, Animated, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/src/infrastructure/components/ThemedText';
 import { ThemedView } from '@/src/infrastructure/components/ThemedView';
+import { getYearFromDate } from '@/src/infrastructure/utils/formatDate';
 
 interface DescriptionSectionProps {
   title: string;
@@ -10,11 +11,6 @@ interface DescriptionSectionProps {
 }
 
 const DescriptionSection: React.FC<DescriptionSectionProps> = ({ title, releaseDate, overview }) => {
-  const getYearFromDate = (dateString: string): string => {
-    const yearMatch = dateString.match(/\d{4}$/);
-    return yearMatch ? yearMatch[0] : 'Unknown';
-  };
-
   return (
     <ThemedView style={styles.descriptionContainer}>
       <ThemedView>

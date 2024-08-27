@@ -1,4 +1,4 @@
-import { GuestSessionDto } from '@/src/domain/Guest/clients/Dtos';
+import { GuestSessionDto } from '@/src/domain/Guest/dtos/Dtos';
 import regeneratorRuntime from "regenerator-runtime"
 
 export class GuestApiClient {

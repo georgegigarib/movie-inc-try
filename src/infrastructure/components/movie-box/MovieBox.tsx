@@ -6,7 +6,7 @@ import { Movie } from '@/src/domain/Movies/model/Movie';
 import { ThemedView } from '@/src/infrastructure/components/ThemedView';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/src/infrastructure/store/store';
-import { addMovie, removeMovie } from '@/src/infrastructure/store/favoriteMovies.ts';
+import { addMovie, removeMovie } from '@/src/infrastructure/store/favoriteMovies';
 
 interface MovieBoxProps {
   movie: Movie | undefined;
@@ -31,17 +31,22 @@ const MovieBox: React.FC<MovieBoxProps> = ({ movie, onPress }) => {
   };
 
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
-      <ThemedView style={styles.container}>
+    <TouchableOpacity onPress={onPress} activeOpacity={0.7} testID="movie-box-touchable">
+      <ThemedView style={styles.container} testID="movie-box-container">
         <MoviePoster
           posterPath={movie?.posterPath!}
           voteAverage={movie?.voteAverage}
           isFavorite={isFavorite}
           onToggleFavorite={handleToggleFavorite}
         />
-        <ThemedView style={styles.detailsContainer}>
-          <ThemedText style={styles.title}>{movie?.title}</ThemedText>
-          <ThemedText style={styles.caption}>Release date: {movie?.releaseDate}</ThemedText>
+        <ThemedView style={styles.detailsContainer} testID="movie-box-details">
+          <ThemedText style={styles.title} testID="movie-box-title">
+            {movie?.title}
+          </ThemedText>
+          
+          <ThemedText style={styles.caption} testID="movie-box-caption">
+            Release date: {movie?.releaseDate}
+          </ThemedText>
         </ThemedView>
       </ThemedView>
     </TouchableOpacity>

@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageWithLoader shows error message if image fails to load 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#fff",
+      },
+      undefined,
+    ]
+  }
+  testID="image-loader"
+>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "#fff",
+        },
+        {
+          "alignItems": "center",
+          "backgroundColor": "rgba(255, 255, 255, 0.8)",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+    testID="error-container"
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#11181C",
+          },
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          {
+            "fontSize": 12,
+            "fontWeight": "300",
+          },
+          undefined,
+        ]
+      }
+    >
+      Picture not available
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`ImageWithLoader shows error message if loading times out 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#fff",
+      },
+      undefined,
+    ]
+  }
+  testID="image-loader"
+>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "#fff",
+        },
+        {
+          "alignItems": "center",
+          "backgroundColor": "rgba(255, 255, 255, 0.8)",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+    testID="error-container"
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#11181C",
+          },
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          {
+            "fontSize": 12,
+            "fontWeight": "300",
+          },
+          undefined,
+        ]
+      }
+    >
+      Picture not available
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`ImageWithLoader shows image and hides loading indicator when image loads 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#fff",
+      },
+      undefined,
+    ]
+  }
+  testID="image-loader"
+>
+  <View
+    collapsable={false}
+    style={
+      {
+        "opacity": 0,
+      }
+    }
+  >
+    <Image
+      onError={[Function]}
+      onLoad={[Function]}
+      onLoadStart={[Function]}
+      source={
+        {
+          "uri": "https://example.com/image.jpg",
+        }
+      }
+      style={
+        {
+          "height": "100%",
+          "width": "100%",
+        }
+      }
+      testID="image-loader-image"
+    />
+  </View>
+</View>
+`;
+
+exports[`ImageWithLoader shows loading indicator initially 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#fff",
+      },
+      undefined,
+    ]
+  }
+  testID="image-loader"
+>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "#fff",
+        },
+        {
+          "alignItems": "center",
+          "backgroundColor": "rgba(255, 255, 255, 0.8)",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+    testID="loading-container"
+  >
+    <ActivityIndicator
+      color="#b6b6b6"
+      size="large"
+    />
+  </View>
+  <View
+    collapsable={false}
+    style={
+      {
+        "opacity": 0,
+      }
+    }
+  >
+    <Image
+      onError={[Function]}
+      onLoad={[Function]}
+      onLoadStart={[Function]}
+      source={
+        {
+          "uri": "https://example.com/image.jpg",
+        }
+      }
+      style={
+        {
+          "height": "100%",
+          "width": "100%",
+        }
+      }
+      testID="image-loader-image"
+    />
+  </View>
+</View>
+`;

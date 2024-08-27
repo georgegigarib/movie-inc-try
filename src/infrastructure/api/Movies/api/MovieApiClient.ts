@@ -1,4 +1,4 @@
-import { MovieDto } from "@/src/domain/Movies/client/Dtos";
+import { MovieDto } from "@/src/domain/Movies/dtos/Dtos";
 import regeneratorRuntime from "regenerator-runtime"
 
 export class MoviesApiClient {
@@ -14,7 +14,7 @@ export class MoviesApiClient {
     const URL = `${this.movieBaseURL}/now_playing?api_key=${this.apiKey}&language=${this.language}&page=1`;
     const response = await fetch(URL);
     const res = await response.json();
-    return res.results as MovieDto[] || [];
+    return res.results as MovieDto[];
   }
 
   public async get(id: number): Promise<MovieDto | null> {
@@ -47,6 +47,22 @@ export class MoviesApiClient {
     return result.results as MovieDto[] || [];
   }
 
+  public async getRatedMovies(sessionId: string): Promise<MovieDto[]> {
+    let url = `${this.guestBaseURL}/${sessionId}/rated/movies?api_key=${this.apiKey}`;
+     const options = {
+      method: 'GET',
+    };
+
+    const response = await fetch(url, options);
+    const result = await response.json();
+
+    if (!response.ok) {
+      return [];
+    }
+
+    return result.results as MovieDto[];
+  }
+
   public async rateMovie(id: number, rate: number, guestSessionId: string): Promise<{ success: boolean }> {
     const URL = `${this.movieBaseURL}/${id}/rating?api_key=${this.apiKey}&guest_session_id=${guestSessionId}`;
     const response = await fetch(URL, {
@@ -64,22 +80,6 @@ export class MoviesApiClient {
       return { success: false };
     }
 
-    return { success: result.success || false };
-  }
-
-  public async getRatedMovies(sessionId: string): Promise<MovieDto[]> {
-    let url = `${this.guestBaseURL}/${sessionId}/rated/movies?api_key=${this.apiKey}`;
-     const options = {
-      method: 'GET',
-    };
-
-    const response = await fetch(url, options);
-    const result = await response.json();
-
-    if (!response.ok) {
-      return [];
-    }
-
-    return result.results as MovieDto[] || [];
+    return { success: result.success };
   }
 }

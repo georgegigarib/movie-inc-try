@@ -1,7 +1,6 @@
-// SubmitButton.tsx
 import React from 'react';
 import { StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 interface SubmitButtonProps {
   isModified: boolean;
@@ -10,7 +9,12 @@ interface SubmitButtonProps {
   onPress: () => void;
 }
 
-const SubmitButton: React.FC<SubmitButtonProps> = ({ isModified, submitted, isLoading, onPress }) => {
+const SubmitButton: React.FC<SubmitButtonProps> = ({
+  isModified,
+  submitted,
+  isLoading,
+  onPress,
+}) => {
   return (
     <TouchableOpacity
       style={[
@@ -22,13 +26,14 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({ isModified, submitted, isLo
       ]}
       onPress={onPress}
       disabled={!isModified || submitted || isLoading}
+      testID="submit-button"
     >
       {isLoading ? (
-        <ActivityIndicator size="small" color="#FFFFFF" />
+        <ActivityIndicator size="small" color="#FFFFFF" testID="activity-indicator" />
       ) : submitted ? (
-        <MaterialCommunityIcons name="check" size={18} color="#FFFFFF" />
+        <Icon name="check" size={18} color="#FFFFFF" testID="check-icon" />
       ) : (
-        <MaterialCommunityIcons name="send" size={18} color="#FFFFFF" />
+        <Icon name="send" size={18} color="#FFFFFF" testID="send-icon" />
       )}
     </TouchableOpacity>
   );

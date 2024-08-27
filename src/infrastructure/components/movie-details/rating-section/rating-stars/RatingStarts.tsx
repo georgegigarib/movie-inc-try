@@ -33,7 +33,7 @@ const RatingStars: React.FC<RatingStarsProps> = ({ movieId, actualRate }) => {
       await rateMovieUseCase.execute(movieId, rating);
       setSubmitted(true);
     } catch (error) {
-      Alert.alert('Error al calificar la película, selecciona una o más estrellas.');
+      Alert.alert('Could not rate movie.');
     } finally {
       setIsLoading(false);
     }
@@ -49,6 +49,7 @@ const RatingStars: React.FC<RatingStarsProps> = ({ movieId, actualRate }) => {
           submitted={submitted}
           onPress={handlePress}
         />
+
         <StarRow
           start={5}
           count={5}

@@ -12,18 +12,19 @@ interface MovieBoxProps {
 
 const Box: React.FC<MovieBoxProps> = ({ movie, onPress }) => {
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
-      <ThemedView style={styles.movieBox}>
-        <ImageWithLoader
-          source={{ uri: movie.posterPath }}
-          style={styles.posterContainer}
-        />
-        <ThemedView style={styles.names}>
-          <ThemedText style={styles.title}>{movie.title}</ThemedText>
-        </ThemedView>
-      </ThemedView>
-    </TouchableOpacity>
-  );
+<TouchableOpacity onPress={onPress} activeOpacity={0.7} testID="open-modal-button">
+  <ThemedView style={styles.movieBox}>
+    <ImageWithLoader
+      source={{ uri: movie.posterPath }}
+      style={styles.posterContainer}
+      testID="image"
+    />
+    <ThemedView style={styles.names}>
+      <ThemedText style={styles.title}>{movie.title}</ThemedText>
+    </ThemedView>
+  </ThemedView>
+</TouchableOpacity>
+  )
 };
 
 const styles = StyleSheet.create({

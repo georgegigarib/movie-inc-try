@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OpenModalButton matches the snapshot when isFavorite is false 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "backgroundColor": "rgba(0, 0, 0, 0.5)",
+      "borderRadius": 20,
+      "opacity": 1,
+      "padding": 10,
+      "position": "absolute",
+      "right": 10,
+      "top": 10,
+    }
+  }
+  testID="open-modal-button"
+>
+  <Text
+    style={
+      {
+        "color": "#fff",
+        "fontSize": 15,
+      }
+    }
+    testID="favorite-icon"
+  >
+    heart-o
+  </Text>
+</View>
+`;
+
+exports[`OpenModalButton matches the snapshot when isFavorite is true 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "backgroundColor": "rgba(0, 0, 0, 0.5)",
+      "borderRadius": 20,
+      "opacity": 1,
+      "padding": 10,
+      "position": "absolute",
+      "right": 10,
+      "top": 10,
+    }
+  }
+  testID="open-modal-button"
+>
+  <Text
+    style={
+      {
+        "color": "#fff",
+        "fontSize": 15,
+      }
+    }
+    testID="favorite-icon"
+  >
+    heart
+  </Text>
+</View>
+`;

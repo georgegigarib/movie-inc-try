@@ -4,7 +4,7 @@ import { Movie } from '@/src/domain/Movies/model/Movie';
 import { ThemedText } from '@/src/infrastructure/components/ThemedText';
 import { MovieRepository } from '@/src/domain/Movies/repository/MovieRepository';
 import Box from '@/src/infrastructure/components/movie-details/recommendation-carousel/box/Box';
-import { ThemedView } from '../../ThemedView';
+import { ThemedView } from '@/src/infrastructure/components/ThemedView';
 
 interface CarouselProps {
   selectedMovie: Movie;

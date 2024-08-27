@@ -15,9 +15,6 @@ describe('Redux store', () => {
   });
 
   it('should have the correct types for dispatch and state', () => {
-    type Dispatch = typeof store.dispatch;
-    type State = ReturnType<typeof store.getState>;
-
     expect(typeof store.dispatch).toBe('function');
     expect(typeof store.getState).toBe('function');
   });

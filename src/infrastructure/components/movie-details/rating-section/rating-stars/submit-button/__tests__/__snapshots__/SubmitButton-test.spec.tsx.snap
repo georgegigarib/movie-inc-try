@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubmitButton renders correctly when loading 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": true,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#007BFF",
+      "borderRadius": 25,
+      "bottom": 21,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 5,
+      "paddingVertical": 5,
+      "position": "absolute",
+      "right": -35,
+    }
+  }
+  testID="submit-button"
+>
+  <ActivityIndicator
+    color="#FFFFFF"
+    size="small"
+    testID="activity-indicator"
+  />
+</View>
+`;
+
+exports[`SubmitButton renders correctly when not loading, not submitted, and modified 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#007BFF",
+      "borderRadius": 25,
+      "bottom": 21,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 5,
+      "paddingVertical": 5,
+      "position": "absolute",
+      "right": -35,
+    }
+  }
+  testID="submit-button"
+>
+  <Text
+    style={
+      {
+        "color": "#FFFFFF",
+        "fontSize": 18,
+      }
+    }
+    testID="send-icon"
+  >
+    send
+  </Text>
+</View>
+`;
+
+exports[`SubmitButton renders correctly when submitted 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": true,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#28a745",
+      "borderRadius": 25,
+      "bottom": 21,
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 5,
+      "paddingVertical": 5,
+      "position": "absolute",
+      "right": -35,
+    }
+  }
+  testID="submit-button"
+>
+  <Text
+    style={
+      {
+        "color": "#FFFFFF",
+        "fontSize": 18,
+      }
+    }
+    testID="check-icon"
+  >
+    check
+  </Text>
+</View>
+`;

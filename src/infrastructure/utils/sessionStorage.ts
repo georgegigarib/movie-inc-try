@@ -1,7 +1,6 @@
-import { GuestSession } from '@/domain/Guest/model/GuestSession';
+import { GuestSession } from '@/src/domain/Guest/model/GuestSession';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 const storageKey = 'MovieDBGuestSession';
 
 export const getSession = async (): Promise<GuestSession | null> => {

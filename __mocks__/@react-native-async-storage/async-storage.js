@@ -1,4 +1,3 @@
-// __mocks__/@react-native-async-storage/async-storage.js
 const mockAsyncStorage = {
     getItem: jest.fn(),
     setItem: jest.fn(),

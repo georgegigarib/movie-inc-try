@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { ThemedView } from '@/src/infrastructure/components/ThemedView';
 import VoteAverage from '@/src/infrastructure/components/vote-average-meter/VoteAverage';
 import RatingStars from '@/src/infrastructure/components/movie-details/rating-section/rating-stars/RatingStarts';
 import FavoriteButton from '@/src/infrastructure/components/movie-details/rating-section/favorite/FavoriteButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/src/infrastructure/store/store';
-import { addMovie, removeMovie } from '@/src/infrastructure/store/favoriteMovies.ts';
+import { addMovie, removeMovie } from '@/src/infrastructure/store/favoriteMovies';
 import { Movie } from '@/src/domain/Movies/model/Movie';
 
 interface RatingSectionProps {
@@ -35,7 +35,9 @@ const RatingSection: React.FC<RatingSectionProps> = ({ movie }) => {
   return (
     <ThemedView style={styles.rateContainer}>
       <VoteAverage voteAverage={movie.voteAverage} />
+
       <FavoriteButton isFavorite={isFavorite} onToggleFavorite={handleToggleFavorite} />
+
       <RatingStars actualRate={movie.rating ?? 0} movieId={movie.id} />
     </ThemedView>
   );

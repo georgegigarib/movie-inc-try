@@ -7,9 +7,10 @@ interface ImageWithLoaderProps {
   source: { uri: string };
   style?: object;
   onLoad?: () => void;
+  testID?: string;
 }
 
-const ImageWithLoader: React.FC<ImageWithLoaderProps> = ({ source, style, onLoad }) => {
+const ImageWithLoader: React.FC<ImageWithLoaderProps> = ({ source, style, onLoad, testID }) => {
   const [loading, setLoading] = useState(true);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [showError, setShowError] = useState(false);
@@ -37,19 +38,20 @@ const ImageWithLoader: React.FC<ImageWithLoaderProps> = ({ source, style, onLoad
   }, [imageLoaded]);
 
   return (
-    <ThemedView style={style}>
+    <ThemedView style={style} testID={testID}>
       {loading && !showError && (
-        <ThemedView style={styles.loadingContainer}>
+        <ThemedView style={styles.loadingContainer} testID="loading-container">
           <ActivityIndicator size="large" color="#b6b6b6" />
         </ThemedView>
       )}
       {showError ? (
-        <ThemedView style={styles.errorContainer}>
+        <ThemedView style={styles.errorContainer} testID="error-container">
           <ThemedText type='caption'>Picture not available</ThemedText>
         </ThemedView>
       ) : (
         <Animated.View style={{ opacity: fadeAnim }}>
           <Image
+            testID={testID ? `${testID}-image` : 'image'}
             source={source}
             style={styles.image}
             onLoad={() => {

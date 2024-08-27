@@ -9,8 +9,17 @@ interface OpenModalButtonProps {
 
 const OpenModalButton: React.FC<OpenModalButtonProps> = ({ isFavorite, onPress }) => {
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
-      <Icon name={isFavorite ? 'heart' : 'heart-o'} size={15} color="#fff" />
+    <TouchableOpacity 
+      style={styles.button} 
+      onPress={onPress} 
+      testID="open-modal-button"
+    >
+      <Icon 
+        name={isFavorite ? 'heart' : 'heart-o'} 
+        size={15} 
+        color="#fff" 
+        testID="favorite-icon"
+      />
     </TouchableOpacity>
   );
 };

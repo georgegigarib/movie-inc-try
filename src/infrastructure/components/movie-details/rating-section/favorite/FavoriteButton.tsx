@@ -9,8 +9,17 @@ interface FavoriteButtonProps {
 
 const FavoriteButton: React.FC<FavoriteButtonProps> = ({ isFavorite, onToggleFavorite }) => {
   return (
-    <TouchableOpacity style={styles.favoriteButton} onPress={onToggleFavorite}>
-      <Icon name={isFavorite ? 'heart' : 'heart-o'} size={30} color="#ff0000" />
+    <TouchableOpacity
+      style={styles.favoriteButton}
+      onPress={onToggleFavorite}
+      testID="favorite-button"
+    >
+      <Icon
+        name={isFavorite ? 'heart' : 'heart-o'}
+        size={30}
+        color="#ff0000"
+        testID="icon"
+      />
     </TouchableOpacity>
   );
 };

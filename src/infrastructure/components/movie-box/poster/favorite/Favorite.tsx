@@ -12,11 +12,13 @@ const Favorite: React.FC<FavoriteIconProps> = ({ isFavorite, onPress }) => {
     <TouchableOpacity
       style={styles.favoriteButton}
       onPress={onPress}
+      testID="favorite-button"
     >
       <Icon
         name={isFavorite ? 'heart' : 'heart-o'}
         size={15}
         color="#fff"
+        testID="favorite-icon"
       />
     </TouchableOpacity>
   );

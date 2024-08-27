@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import ImageWithLoader from '@/src/infrastructure/components/image-loader-box/ImageLoaderBox';
 import VoteAverage from '@/src/infrastructure/components/vote-average-meter/VoteAverage';
 import FavoriteIcon from '@/src/infrastructure/components/movie-box/poster/favorite/Favorite';
@@ -14,13 +14,16 @@ interface MoviePosterProps {
 
 const MoviePoster: React.FC<MoviePosterProps> = ({ posterPath, voteAverage, isFavorite, onToggleFavorite }) => {
   return (
-    <ThemedView style={styles.posterContainer}>
+    <ThemedView style={styles.posterContainer} testID="movie-poster">
       <ImageWithLoader
         source={{ uri: posterPath }}
         style={styles.poster}
+        testID="poster-image"
       />
+      
       <FavoriteIcon isFavorite={isFavorite} onPress={onToggleFavorite} />
-      <ThemedView style={styles.voteContainer}>
+
+      <ThemedView style={styles.voteContainer} testID="vote-container">
         <VoteAverage voteAverage={voteAverage} />
       </ThemedView>
     </ThemedView>

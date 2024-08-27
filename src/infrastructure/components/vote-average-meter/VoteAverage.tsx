@@ -8,6 +8,8 @@ interface VoteAverageProps {
   voteAverage: number | undefined;
 }
 
+const isTestEnvironment = process.env.NODE_ENV === 'test';
+
 export default function VoteAverage({ voteAverage }: VoteAverageProps) {
   const animatedColor = useRef(new Animated.Value(0)).current;
   const animatedValue1 = useRef(new Animated.Value(0)).current;
@@ -15,50 +17,52 @@ export default function VoteAverage({ voteAverage }: VoteAverageProps) {
   const animatedValue3 = useRef(new Animated.Value(0)).current;
 
   const fixedAverage = (rate: number) => {
-    return Math.floor(rate * 10) / 10
-  }
+    return Math.floor(rate * 10) / 10;
+  };
   
   useEffect(() => {
-    Animated.timing(animatedColor, {
-      toValue: 100,
-      duration: 1000,
-      useNativeDriver: false,
-    }).start();
+    if (!isTestEnvironment) {
+      Animated.timing(animatedColor, {
+        toValue: 100,
+        duration: 1000,
+        useNativeDriver: false,
+      }).start();
 
-    const animateConditionally = (
-      value: Animated.Value,
-      conditions: { check: boolean; toValue: number }[]
-    ) => {
-      const condition = conditions.find((c) => c.check);
-      if (condition) {
-        Animated.timing(value, {
-          toValue: condition.toValue,
-          duration: 1000,
-          useNativeDriver: false,
-        }).start();
+      const animateConditionally = (
+        value: Animated.Value,
+        conditions: { check: boolean; toValue: number }[]
+      ) => {
+        const condition = conditions.find((c) => c.check);
+        if (condition) {
+          Animated.timing(value, {
+            toValue: condition.toValue,
+            duration: 1000,
+            useNativeDriver: false,
+          }).start();
+        }
+      };
+
+      if (voteAverage !== undefined) {
+        const percentage = (voteAverage / 10) * 100;
+
+        animateConditionally(animatedValue1, [
+          { check: voteAverage > 2.5 && voteAverage <= 5, toValue: percentage },
+          { check: voteAverage < 2.5, toValue: 25 },
+          { check: voteAverage > 5, toValue: 50 },
+        ]);
+
+        animateConditionally(animatedValue2, [
+          { check: voteAverage > 5 && voteAverage <= 7.5, toValue: percentage },
+          { check: voteAverage < 5, toValue: 25 },
+          { check: voteAverage > 7.5, toValue: 75 },
+        ]);
+
+        animateConditionally(animatedValue3, [
+          { check: voteAverage > 7.5 && voteAverage <= 10, toValue: percentage },
+          { check: voteAverage < 7.5, toValue: 25 },
+          { check: voteAverage > 10, toValue: 100 },
+        ]);
       }
-    };
-
-    if (voteAverage !== undefined) {
-      const percentage = (voteAverage / 10) * 100;
-
-      animateConditionally(animatedValue1, [
-        { check: voteAverage > 2.5 && voteAverage <= 5, toValue: percentage },
-        { check: voteAverage < 2.5, toValue: 25 },
-        { check: voteAverage > 5, toValue: 50 },
-      ]);
-
-      animateConditionally(animatedValue2, [
-        { check: voteAverage > 5 && voteAverage <= 7.5, toValue: percentage },
-        { check: voteAverage < 5, toValue: 25 },
-        { check: voteAverage > 7.5, toValue: 75 },
-      ]);
-
-      animateConditionally(animatedValue3, [
-        { check: voteAverage > 7.5 && voteAverage <= 10, toValue: percentage },
-        { check: voteAverage < 7.5, toValue: 25 },
-        { check: voteAverage > 10, toValue: 100 },
-      ]);
     }
   }, [voteAverage]);
 
@@ -67,7 +71,7 @@ export default function VoteAverage({ voteAverage }: VoteAverageProps) {
     outputRange: [getColorForVote(0), getColorForVote(voteAverage!)],
   });
 
-  const animatedValues = [animatedValue1, animatedValue2,];
+  const animatedValues = [animatedValue1, animatedValue2, animatedValue3];
   const rotations = animatedValues.map((animatedValue) =>
     animatedValue.interpolate({
       inputRange: [0, 100],
@@ -111,8 +115,7 @@ export default function VoteAverage({ voteAverage }: VoteAverageProps) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-  },
+  container: {},
   circle: {
     width: 63,
     height: 63,

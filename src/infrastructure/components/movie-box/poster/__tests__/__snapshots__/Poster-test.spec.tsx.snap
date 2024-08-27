@@ -1,0 +1,307 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviePoster renders correctly and displays movie poster, vote average, and favorite icon 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#fff",
+      },
+      {
+        "height": 360,
+        "position": "relative",
+      },
+    ]
+  }
+  testID="movie-poster"
+>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "#fff",
+        },
+        {
+          "backgroundColor": "transparent",
+          "borderColor": "#ddd",
+          "borderRadius": 25,
+          "borderWidth": 1,
+          "elevation": 15,
+          "height": 350,
+          "overflow": "hidden",
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 0,
+            "width": 0,
+          },
+          "shadowOpacity": 0.8,
+          "width": 230,
+        },
+      ]
+    }
+    testID="poster-image"
+  >
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "#fff",
+          },
+          {
+            "alignItems": "center",
+            "backgroundColor": "rgba(255, 255, 255, 0.8)",
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+        ]
+      }
+      testID="loading-container"
+    >
+      <ActivityIndicator
+        color="#b6b6b6"
+        size="large"
+      />
+    </View>
+    <View
+      collapsable={false}
+      style={
+        {
+          "opacity": 0,
+        }
+      }
+    >
+      <Image
+        onError={[Function]}
+        onLoad={[Function]}
+        onLoadStart={[Function]}
+        source={
+          {
+            "uri": "https://example.com/poster.jpg",
+          }
+        }
+        style={
+          {
+            "height": "100%",
+            "width": "100%",
+          }
+        }
+        testID="poster-image-image"
+      />
+    </View>
+  </View>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "backgroundColor": "rgba(0, 0, 0, 0.5)",
+        "borderRadius": 25,
+        "opacity": 1,
+        "padding": 10,
+        "position": "absolute",
+        "right": 10,
+        "top": 10,
+      }
+    }
+    testID="favorite-button"
+  >
+    <Text
+      style={
+        {
+          "color": "#fff",
+          "fontSize": 15,
+        }
+      }
+      testID="favorite-icon"
+    >
+      heart-o
+    </Text>
+  </View>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "#fff",
+        },
+        {
+          "backgroundColor": "transparent",
+          "bottom": -7,
+          "position": "absolute",
+          "right": -7,
+        },
+      ]
+    }
+    testID="vote-container"
+  >
+    <View
+      style={{}}
+    >
+      <View
+        style={
+          [
+            {
+              "alignItems": "center",
+              "backgroundColor": "#D1D1D182",
+              "borderRadius": 80,
+              "borderWidth": 0,
+              "height": 63,
+              "justifyContent": "center",
+              "position": "relative",
+              "width": 63,
+            },
+            {
+              "borderColor": "transparent",
+            },
+          ]
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            {
+              "borderColor": "transparent",
+              "borderLeftColor": "rgba(204, 0, 0, 0)",
+              "borderRadius": 30,
+              "borderWidth": 6,
+              "height": "100%",
+              "position": "absolute",
+              "transform": [
+                {
+                  "rotate": "130deg",
+                },
+              ],
+              "width": "100%",
+            }
+          }
+        />
+        <View
+          collapsable={false}
+          style={
+            {
+              "borderColor": "transparent",
+              "borderLeftColor": "rgba(204, 0, 0, 0)",
+              "borderRadius": 30,
+              "borderWidth": 6,
+              "height": "100%",
+              "position": "absolute",
+              "transform": [
+                {
+                  "rotate": "40deg",
+                },
+              ],
+              "width": "100%",
+            }
+          }
+        />
+        <View
+          collapsable={false}
+          style={
+            {
+              "borderColor": "transparent",
+              "borderLeftColor": "rgba(204, 0, 0, 0)",
+              "borderRadius": 30,
+              "borderWidth": 6,
+              "height": "100%",
+              "position": "absolute",
+              "transform": [
+                {
+                  "rotate": "40deg",
+                },
+              ],
+              "width": "100%",
+            }
+          }
+        />
+        <View
+          collapsable={false}
+          style={
+            {
+              "borderColor": "transparent",
+              "borderLeftColor": "rgba(204, 0, 0, 0)",
+              "borderRadius": 30,
+              "borderWidth": 6,
+              "height": "100%",
+              "position": "absolute",
+              "transform": [
+                {
+                  "rotate": "40deg",
+                },
+              ],
+              "width": "100%",
+            }
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "backgroundColor": "#fff",
+              },
+              {
+                "alignItems": "center",
+                "borderRadius": 45,
+                "height": 54,
+                "justifyContent": "center",
+                "width": 54,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#11181C",
+                },
+                {
+                  "fontSize": 16,
+                },
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                {
+                  "fontSize": 16,
+                  "fontWeight": "bold",
+                },
+              ]
+            }
+          >
+            8.5
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

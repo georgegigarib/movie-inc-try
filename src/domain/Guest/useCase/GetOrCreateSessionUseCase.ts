@@ -1,5 +1,5 @@
 import { getSession, isActive, setSession } from "@/src/infrastructure/utils/sessionStorage";
-import { GuestSession } from "@/src/domain/Guest//model/GuestSession";
+import { GuestSession } from "@/src/domain/Guest/model/GuestSession";
 import { GuestRepository } from "@/src/domain/Guest/repository/GuestRepository";
 
 export class GetOrCreateSessionUseCase {

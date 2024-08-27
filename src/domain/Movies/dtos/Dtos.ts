@@ -1,4 +1,4 @@
-import { ActorDto } from "@/src/domain/Actor/client/Dtos";
+import { ActorDto } from "@/src/domain/Actor/dtos/Dtos";
 
 export type MovieDto = {
 	id: number;

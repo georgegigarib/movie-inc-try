@@ -1,0 +1,573 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VoteAverage renders correctly for voteAverage = 1 1`] = `
+<View
+  style={{}}
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": "#D1D1D182",
+          "borderRadius": 80,
+          "borderWidth": 0,
+          "height": 63,
+          "justifyContent": "center",
+          "position": "relative",
+          "width": 63,
+        },
+        {
+          "borderColor": "transparent",
+        },
+      ]
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "130deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "40deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "40deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "40deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "#fff",
+          },
+          {
+            "alignItems": "center",
+            "borderRadius": 45,
+            "height": 54,
+            "justifyContent": "center",
+            "width": 54,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#11181C",
+            },
+            {
+              "fontSize": 16,
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            {
+              "fontSize": 16,
+              "fontWeight": "bold",
+            },
+          ]
+        }
+      >
+        1
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`VoteAverage renders correctly for voteAverage = 5 1`] = `
+<View
+  style={{}}
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": "#D1D1D182",
+          "borderRadius": 80,
+          "borderWidth": 0,
+          "height": 63,
+          "justifyContent": "center",
+          "position": "relative",
+          "width": 63,
+        },
+        {
+          "borderColor": "transparent",
+        },
+      ]
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "130deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "40deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "40deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "40deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "#fff",
+          },
+          {
+            "alignItems": "center",
+            "borderRadius": 45,
+            "height": 54,
+            "justifyContent": "center",
+            "width": 54,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#11181C",
+            },
+            {
+              "fontSize": 16,
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            {
+              "fontSize": 16,
+              "fontWeight": "bold",
+            },
+          ]
+        }
+      >
+        5
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`VoteAverage renders correctly for voteAverage = 8 1`] = `
+<View
+  style={{}}
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": "#D1D1D182",
+          "borderRadius": 80,
+          "borderWidth": 0,
+          "height": 63,
+          "justifyContent": "center",
+          "position": "relative",
+          "width": 63,
+        },
+        {
+          "borderColor": "transparent",
+        },
+      ]
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "130deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "40deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "40deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "40deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "#fff",
+          },
+          {
+            "alignItems": "center",
+            "borderRadius": 45,
+            "height": 54,
+            "justifyContent": "center",
+            "width": 54,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#11181C",
+            },
+            {
+              "fontSize": 16,
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            {
+              "fontSize": 16,
+              "fontWeight": "bold",
+            },
+          ]
+        }
+      >
+        8
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`VoteAverage renders correctly for voteAverage = 10 1`] = `
+<View
+  style={{}}
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": "#D1D1D182",
+          "borderRadius": 80,
+          "borderWidth": 0,
+          "height": 63,
+          "justifyContent": "center",
+          "position": "relative",
+          "width": 63,
+        },
+        {
+          "borderColor": "transparent",
+        },
+      ]
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "130deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "40deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "40deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      collapsable={false}
+      style={
+        {
+          "borderColor": "transparent",
+          "borderLeftColor": "color-for-vote0",
+          "borderRadius": 30,
+          "borderWidth": 6,
+          "height": "100%",
+          "position": "absolute",
+          "transform": [
+            {
+              "rotate": "40deg",
+            },
+          ],
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "#fff",
+          },
+          {
+            "alignItems": "center",
+            "borderRadius": 45,
+            "height": 54,
+            "justifyContent": "center",
+            "width": 54,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#11181C",
+            },
+            {
+              "fontSize": 16,
+            },
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            undefined,
+            {
+              "fontSize": 16,
+              "fontWeight": "bold",
+            },
+          ]
+        }
+      >
+        10
+      </Text>
+    </View>
+  </View>
+</View>
+`;

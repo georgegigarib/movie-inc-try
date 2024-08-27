@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getSession, setSession, isActive } from '@/src/infrastructure/utils/sessionStorage';
-import { GuestSession } from '@/domain/Guest/model/GuestSession';
+import { GuestSession } from '@/src/domain/Guest/model/GuestSession';
 
 jest.mock('@react-native-async-storage/async-storage', () => ({
   getItem: jest.fn(),
@@ -55,7 +55,7 @@ describe('Session Functions', () => {
     });
 
     it('should return true if the current date is before the session expiry date', () => {
-      const mockCurrentDate = new Date('2024-08-20T06:31:08Z'); // Before expiry
+      const mockCurrentDate = new Date('2024-08-20T06:31:08Z');
   
       global.Date.now = jest.fn(() => mockCurrentDate.getTime());
   
@@ -68,7 +68,7 @@ describe('Session Functions', () => {
         expireDate: '2024-08-20T06:31:09Z',
       };
 
-      const mockCurrentDate = new Date('2024-08-23T06:31:10Z'); // After expiry
+      const mockCurrentDate = new Date('2024-08-23T06:31:10Z');
   
       global.Date.now = jest.fn(() => mockCurrentDate.getTime());
   
@@ -81,6 +81,6 @@ describe('Session Functions', () => {
   });  
 
   beforeEach(() => {
-    jest.clearAllMocks(); // Limpia los mocks antes de cada prueba
+    jest.clearAllMocks();
   });
 });

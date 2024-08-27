@@ -15,8 +15,13 @@ const StarRow: React.FC<StarRowProps> = ({ start, count, rating, submitted, onPr
   return (
     <ThemedView style={styles.row}>
       {[...Array(count)].map((_, index) => (
-        <TouchableOpacity key={index + start} onPress={() => onPress(index + start)} disabled={submitted}>
-          <Animated.View style={styles.star}>
+        <TouchableOpacity
+          key={index + start}
+          onPress={() => onPress(index + start)}
+          disabled={submitted}
+          testID={`star-row-touchable-${index + start}`}
+        >
+          <Animated.View style={styles.star} testID={`star-row-animated-view-${index + start}`}>
             <Icon
               name={index + start < rating ? 'star' : 'star-o'}
               size={24}
