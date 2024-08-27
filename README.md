@@ -46,36 +46,15 @@ This project is a mobile application developed with **React Native** using **Exp
    npm test
    ```
 
-
 # Visual demo
 #### Note: These demo gifs are recorded with dark mode on, the app goes white if dark mode is off :-)
 
-#### See whats playing now, details and recommended movies
+| **See what's playing now, details and recommended movies** | **Rate movie**                               | **Add to favorites**                         |
+|------------------------------------------------------------|----------------------------------------------|----------------------------------------------|
+| <div align="center"><img src="./public/movie-details.gif" width="220" height="450"></div> | <div align="center"><img src="./public/rate-movie.gif" width="220" height="450"></div> | <div align="center"><img src="./public/add-to-favorites.gif" width="220" height="450"></div> |
 
-![](./public/movie-details.gif)
+# Making process
 
-#### Rate movie
-
-![](./public/rate-movie.gif)
-
-
-#### add to favorites
-
-![](./public/add-to-favorites.gif)
-
-
-# **making process (videos I could recovered)**
-
-
-#### add to favorites
-
-vertical scrolling, didnt like that too much
-![](./public/developing-1.gif)
-
-
-So i made it horizontal
-![](./public/developing.PNG)
-
-and here we have the details view
-![](./public/developing-2.gif)
-
+| **Vertical scrolling (didn't like that too much)** | **Changed to horizontal scrolling**  | **Details view**                             |
+|----------------------------------------------------------------------|----------------------------------------------|----------------------------------------------|
+| <div align="center"><img src="./public/developing-1.gif" width="220" height="450"></div> | <div align="center"><img src="./public/developing.PNG" width="220" height="450"></div> | <div align="center"><img src="./public/developing-2.gif" width="220" height="450"></div> |
