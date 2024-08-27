@@ -8,6 +8,8 @@ This project is a mobile application developed with **React Native** using **Exp
 
    ```bash
    npm install
+   ```
+
    
 2. **Configure environment variables**:
 
@@ -21,10 +23,28 @@ This project is a mobile application developed with **React Native** using **Exp
 
    ```bash
    npm start
-   
+   ```
+
 5. Scan the QR code in the terminal with Expo Go.
 
-done!
+# done!
+
+
+# Running Tests
+
+1. **Run the project tests with coverage**:
+
+   ```bash
+   npm test -- --coverage
+   ```
+
+*You can see the coverage by opening index.html on ./coverage
+
+2. **Run the project tests with no coverage**:
+
+   ```bash
+   npm test
+   ```
 
 
 # Visual demo
