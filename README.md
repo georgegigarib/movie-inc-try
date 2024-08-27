@@ -1,50 +1,61 @@
-# Welcome to your Expo app 👋
+# Movie Details App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This project is a mobile application developed with **React Native** using **Expo**. The app allows users to view movie details such as the poster, user ratings, actors, and recommended movies. Additionally, users can rate a movie and/or add it to their favorites list.
 
-## Get started
+## Setup
 
-1. Install dependencies
+1. **Install dependencies**:
 
    ```bash
    npm install
-   ```
+   
+2. **Configure environment variables**:
 
-2. Start the app
+   Create a .env file based on env.example. You will need an API key from [The Movie Database (TMDb)](https://www.themoviedb.org/).
+
+3. **Download Expo Go**:
+
+   Get the Expo Go app on your device from [Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent) or [Apple App Store](https://apps.apple.com/app/expo-go/id982107779).
+   
+4. **Run the project**:
 
    ```bash
-    npx expo start
-   ```
+   npm start
+   
+5. Scan the QR code in the terminal with Expo Go.
 
-In the output, you'll find options to open the app in a
+done!
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+# Visual demo
+#### Note: These demo gifs are recorded with dark mode on, the app goes white if dark mode is off :-)
 
-## Get a fresh project
+#### See whats playing now, details and recommended movies
 
-When you're ready, run:
+![](./public/movie-details.gif)
 
-```bash
-npm run reset-project
-```
+#### Rate movie
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+![](./public/rate-movie.gif)
 
-## Learn more
 
-To learn more about developing your project with Expo, look at the following resources:
+#### add to favorites
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+![](./public/add-to-favorites.gif)
 
-## Join the community
 
-Join our community of developers creating universal apps.
+# **making process (videos I could recovered)**
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+#### add to favorites
+
+vertical scrolling, didnt like that too much
+![](./public/developing-1.gif)
+
+
+So i made it horizontal
+![](./public/developing.PNG)
+
+and here we have the details view
+![](./public/developing-2.gif)
+
