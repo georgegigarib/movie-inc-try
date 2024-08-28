@@ -13,8 +13,9 @@ describe("GuestRepository", () => {
   
     beforeEach(() => {
       guestApiClientMock = mock<GuestApiClient>();
-      guestRepository = new GuestRepository();
-      (guestRepository as any).apiClient = guestApiClientMock;
+      guestRepository = new GuestRepository(
+        guestApiClientMock,
+      );
   
       guestSessionDto = {
         guest_session_id: "session123",

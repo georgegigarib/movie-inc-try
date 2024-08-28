@@ -1,3 +1,5 @@
+import { ActorDto } from "../dtos/Dtos";
+
 export class Actor {
 	constructor(
 		public readonly name: string,
@@ -5,9 +7,14 @@ export class Actor {
 		public readonly character: string,
 		public readonly profilePath: string
 	) {
-		this.name = name,
-		this.id = id,
-		this.character = character,
-		this.profilePath = profilePath
 	}
+
+	static fromDto(dto: ActorDto): Actor {
+        return new Actor(
+            dto.name,
+            dto.id,
+            dto.character,
+            `${process.env.EXPO_PUBLIC_API_IMAGE_BASE_URL}${dto.profile_path}`
+        );
+    }
 }
